@@ -69,7 +69,7 @@ class BasePlot(object):
             self.app.exec_()   
 
 class SerialPlot(BasePlot):
-    def __init__(self, com_port, baud_rate, **kwargs):
+    def __init__(self, com_port, baudrate, **kwargs):
         self.serial_port = serial.Serial()
         self.serial_port.baud_rate = baud_rate
         self.serial_port.port = com_port
