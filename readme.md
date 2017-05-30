@@ -1,16 +1,17 @@
 # Software Oscilloscope
-An ongoing python project which takes in data from any stream(Serial port, TCP socket or any generic stream) and plot it in real time using matplotlib. The stream must implement open(), close() and readline() methods 
+A python project which takes in data from any stream(Serial port, TCP socket or any generic stream) and plots it in real time using PyQtGraph. The stream must implement open(), close() and readline() methods 
 to work with the package.
 
 ## Installation
-* Requires Python 2
+* Works with Python 2/3
 * Clone the repo or download the zip
 * Install VC++ for Python from [here](https://www.microsoft.com/en-in/download/details.aspx?id=44266)
 * `cd` to the folder
 * run `pip -install -r "requirements.txt"`
   
 ### Dependencies
-* matplotlib 
+* pyqtgraph
+* PySide or PyQt 4.8+ 
 * numpy
 * pySerial
 
@@ -26,8 +27,8 @@ to work with the package.
 Uses the SocketPlot-Test example to plot a sine wave.
 Run SocketPlot-Test.py on a different console window
 '''
->>>from SoftOscilloscope import SocketPlot
->>>plot = SocketPlot('localhost', 5000)
+>>>from SoftOscilloscope import SocketClientPlot
+>>>plot = SocketClientPlot('localhost', 5000)
 >>>plot.start()
 
 '''
@@ -41,8 +42,8 @@ Example for serial plots
 '''
 Takes a generic stream and sets custom parameters
 '''
->>>from SoftOscilloscope import GenericStreamPlot
->>>plot = GenericStreamPlot(
+>>>from SoftOscilloscope import GenericPlot
+>>>plot = GenericPlot(
 	myStream, 
 	xlim=(-100,100),
 	ylim=(-50, 50),
@@ -53,11 +54,8 @@ Takes a generic stream and sets custom parameters
 ```
 
 ### Demos
-
-Serial                                      |  Socket 
-:------------------------------------------:|:-------------------------------------------:
-![alt tag](http://i.imgur.com/OWu5wBS.gif)  |![alt tag](http://i.imgur.com/xwUVAz4.gif)
-Plotting data from an Ultrasonic sensor     |  Plotting a sine wave from a TCP socket
+![alt tag](http://imgur.com/zu63yun.gif)  
+Plotting x,y,z data from a 9DOF IMU over a serial port.   
 
 
 ### Contributions
