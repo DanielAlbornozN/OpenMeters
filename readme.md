@@ -6,7 +6,7 @@ to work with the package.
 * Works with Python 2/3
 * Clone the repo or download the zip
 * Install VC++ for Python from [here](https://www.microsoft.com/en-in/download/details.aspx?id=44266)
-* `cd` to the folder
+* `cd` to the SoftwareOscilloscope folder
 * run `pip -install -r "requirements.txt"`
   
 ### Dependencies
